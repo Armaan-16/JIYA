@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "project": "JIYA",
+  "last_updated": "2026-10-19T15:29:48.749422+05:30",
+  "total_records": 2,
+  "decisions": [
+    {
+      "id": "ADR-0001",
+      "title": "Initialize 9-Entity Engineering Council Governance Framework",
+      "status": "ACCEPTED",
+      "date": "2026-10-19",
+      "file_path": "docs/decisions/0001-initialize-9-entity-engineering-council.md",
+      "escalation_level": "Level 3",
+      "sponsors": [
+        "ATLAS",
+        "PONYTAIL",
+        "ECC",
+        "KARPATHY",
+        "GSD",
+        "CODERABBIT",
+        "RALPH_LOOP",
+        "HERMES",
+        "TASK_OBSERVER"
+      ],
+      "veto_checks": {
+        "ecc_security": "PASSED - No secrets, sandboxed structure, explicit verification",
+        "atlas_architecture": "PASSED - Clear separation into .agents/skills, memory, and docs",
+        "ponytail_simplicity": "PASSED - Plain JSON memory, Markdown rules, standard python scripts",
+        "karpathy_discipline": "PASSED - Additive structure, no destructive churn to existing codebase"
+      },
+      "summary": "Established the comprehensive 9-Entity Engineering Council framework across AGENTS.md, GEMINI.md, persistent memory, and dedicated agent skills to govern repository architecture, security, simplicity, and delivery."
+    },
+    {
+      "id": "ADR-0002",
+      "title": "Modular Directory Refactoring and Subsystem Decoupling",
+      "status": "ACCEPTED",
+      "date": "2026-10-19",
+      "file_path": "docs/decisions/0002-modular-directory-refactoring-and-subsystem-decoupling.md",
+      "escalation_level": "Level 2",
+      "sponsors": [
+        "ATLAS",
+        "PONYTAIL",
+        "ECC",
+        "KARPATHY",
+        "GSD",
+        "CODERABBIT",
+        "RALPH_LOOP",
+        "HERMES",
+        "TASK_OBSERVER"
+      ],
+      "veto_checks": {
+        "ecc_security": "PASSED",
+        "atlas_architecture": "PASSED",
+        "ponytail_simplicity": "PASSED",
+        "karpathy_discipline": "PASSED"
+      },
+      "summary": "Refactor JIYA codebase into modular file system: BRAIN, BRAIN/MEMORY, PERSONALITY, SKILLS, VOICE, EARS, VISION, MODELS, TESTS and update all imports."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "user_name": "Armaan",
+  "project_title": "JIYA (AI Operating System)",
+  "language_runtime": {
+    "primary": "Python 3.12",
+    "platform": "Windows 11 (PowerShell)",
+    "type_checking": "pyright (basic mode)"
+  },
+  "code_style_and_conventions": {
+    "naming_conventions": {
+      "modules_and_packages": "lowercase_with_underscores or UPPERCASE for legacy core subsystem roots (CORE, SERVICES, MODELS, UI, VOICE, AUTOMATION)",
+      "classes": "PascalCase",
+      "functions_and_variables": "snake_case",
+      "constants": "UPPER_SNAKE_CASE"
+    },
+    "formatting": {
+      "indentation": "4 spaces",
+      "line_length_target": 100,
+      "surgical_preservation": true,
+      "preserve_comments": true
+    },
+    "architecture_philosophy": {
+      "minimal_dependencies": true,
+      "prefer_stdlib": true,
+      "fail_gracefully": true,
+      "fast_startup": true,
+      "modular_services": true
+    }
+  },
+  "engineering_workflow": {
+    "testing_directory": "TESTS",
+    "test_runner": "python -m unittest or pytest",
+    "escalation_compliance": "strict",
+    "require_adr_for_architecture_changes": true,
+    "review_gate_enforcement": "all 6 passes required before completion"
+  },
+  "interaction_preferences": {
+    "tone": "Direct, technically rigorous, respectful, concise, proactive",
+    "explanation_style": "Provide clear reasoning, highlight non-obvious trade-offs, avoid redundant filler text",
+    "deliberation_visibility": "Present council entity verdicts clearly with explicit rationale"
+  }
+}
+

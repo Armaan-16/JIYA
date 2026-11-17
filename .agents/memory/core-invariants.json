@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0.0",
+  "project_name": "JIYA",
+  "last_updated": "2026-10-19T14:26:36+05:30",
+  "governing_body": "The 9-Entity Engineering Council",
+  "invariants": {
+    "security": {
+      "no_plaintext_secrets": {
+        "rule_id": "SEC-001",
+        "description": "API keys, access tokens, and sensitive credentials must never be committed to repository code, configuration files, or logs. Use environment variables or secure credential storage.",
+        "enforced_by": "ECC",
+        "severity": "CRITICAL"
+      },
+      "command_execution_guardrails": {
+        "rule_id": "SEC-002",
+        "description": "System commands executed via automation or LLM tools must be sanitized, bounded, and audited. Arbitrary unrestricted shell execution without validation is prohibited.",
+        "enforced_by": "ECC",
+        "severity": "CRITICAL"
+      },
+      "least_privilege_access": {
+        "rule_id": "SEC-003",
+        "description": "File system operations, IPC, and network socket access must be scoped strictly to the minimum required workspace directories and ports.",
+        "enforced_by": "ECC",
+        "severity": "HIGH"
+      }
+    },
+    "architecture": {
+      "unidirectional_dependencies": {
+        "rule_id": "ARCH-001",
+        "description": "Subsystem dependencies must flow cleanly: UI/VOICE -> SERVICES -> CORE -> MODELS. Circular imports across layers are strictly prohibited.",
+        "enforced_by": "ATLAS",
+        "severity": "HIGH"
+      },
+      "adr_requirement_for_level_2_and_3": {
+        "rule_id": "ARCH-002",
+        "description": "Any change altering subsystem contracts, introducing new dependencies, or deprecating existing APIs must register an ADR in docs/decisions/.",
+        "enforced_by": "ATLAS",
+        "severity": "HIGH"
+      },
+      "service_encapsulation": {
+        "rule_id": "ARCH-003",
+        "description": "Internal implementation details of SERVICES (e.g. MemoryService, ProviderManager) must be encapsulated behind clean interface contracts.",
+        "enforced_by": "ATLAS",
+        "severity": "MEDIUM"
+      }
+    },
+    "simplicity": {
+      "decision_ladder_enforcement": {
+        "rule_id": "SIMP-001",
+        "description": "Always follow the ladder: (1) Do nothing / eliminate -> (2) OS/Platform native -> (3) Python stdlib -> (4) Existing workspace packages -> (5) Minimal third-party library.",
+        "enforced_by": "PONYTAIL",
+        "severity": "HIGH"
+      },
+      "yagni_anti_bloat": {
+        "rule_id": "SIMP-002",
+        "description": "Strict prohibition of speculative features, premature abstractions, empty interface boilerplate, and multi-layer wrappers.",
+        "enforced_by": "PONYTAIL",
+        "severity": "HIGH"
+      },
+      "zero_dead_code": {
+        "rule_id": "SIMP-003",
+        "description": "No commented-out code, orphaned functions, unused imports, or zombie modules may remain in the active codebase.",
+        "enforced_by": "PONYTAIL",
+        "severity": "MEDIUM"
+      }
+    },
+    "implementation_discipline": {
+      "surgical_diff_control": {
+        "rule_id": "DISC-001",
+        "description": "Changes must be scoped to the minimal contiguous block necessary. Mass reformatting, gratuitous whitespace churn, and unnecessary file rewrites are rejected.",
+        "enforced_by": "KARPATHY",
+        "severity": "HIGH"
+      },
+      "explicit_assumptions": {
+        "rule_id": "DISC-002",
+        "description": "State all assumptions regarding inputs, dependencies, and environment behavior before writing code, and verify them through tangible runtime proof.",
+        "enforced_by": "KARPATHY",
+        "severity": "HIGH"
+      },
+      "documentation_integrity": {
+        "rule_id": "DISC-003",
+        "description": "Preserve all existing docstrings, explanatory comments, and contracts unless their behavior is deliberately being modified.",
+        "enforced_by": "KARPATHY",
+        "severity": "MEDIUM"
+      }
+    },
+    "delivery_and_verification": {
+      "tdd_verification_proof": {
+        "rule_id": "DELV-001",
+        "description": "Every logic modification or feature addition must be accompanied by automated tests in TESTS/ with command invocation logs proving green status.",
+        "enforced_by": "GSD",
+        "severity": "HIGH"
+      },
+      "disk_externalized_state": {
+        "rule_id": "DELV-002",
+        "description": "Multi-step operations must anchor their state to PRD.md and progress.txt on disk to withstand context eviction or session restarts.",
+        "enforced_by": "RALPH_LOOP",
+        "severity": "HIGH"
+      },
+      "contextual_caller_verification": {
+        "rule_id": "DELV-003",
+        "description": "AST-aware caller and consumer analysis must confirm that no downstream component is broken by signature or behavioral alterations.",
+        "enforced_by": "CODERABBIT",
+        "severity": "HIGH"
+      }
+    }
+  }
+}
+

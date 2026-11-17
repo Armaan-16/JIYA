@@ -1,0 +1,33 @@
+{
+  "pythonVersion": "3.12",
+  "pythonPlatform": "Windows",
+  "typeCheckingMode": "basic",
+  "include": [
+    "BRAIN",
+    "PERSONALITY",
+    "SKILLS",
+    "VOICE",
+    "EARS",
+    "VISION",
+    "MODELS",
+    "TESTS",
+    "main.py",
+    ".agents/skills/**/scripts/*.py"
+  ],
+  "exclude": [
+    "**/__pycache__",
+    ".git",
+    ".venv",
+    "venv",
+    "DATA",
+    "LOGS",
+    "JIYA_MEMORY"
+  ],
+  "reportMissingImports": "warning",
+  "reportMissingTypeStubs": false,
+  "reportUnusedImport": "warning",
+  "reportUnusedVariable": "warning",
+  "reportDuplicateImport": "warning",
+  "reportOptionalSubscript": "none",
+  "reportOptionalMemberAccess": "none"
+}
